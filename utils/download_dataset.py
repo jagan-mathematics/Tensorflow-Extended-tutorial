@@ -41,6 +41,8 @@ def get_folder():
         if ref == Config.PROJECT_NAME:
            path =  os.path.join(path, ref)
            break
+        if path == '':
+           raise Exception('Check Wheather project name set correctly') 
     return path
 
 
