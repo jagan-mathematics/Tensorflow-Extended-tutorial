@@ -129,5 +129,6 @@ dmypy.json
 .pyre/
 
 # output folders
-.data
-.temp_
+data/
+temp_/
+utils/__pycache__/
