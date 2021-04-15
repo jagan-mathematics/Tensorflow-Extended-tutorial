@@ -1,5 +1,9 @@
 import pandas as pd
+from tfx.types import artifact_utils
+from tfx.types import standard_artifacts
+from tfx.types import channel_utils
 from collections import defaultdict
+from ml_metadata.proto import metadata_store_pb2
 
 def display_properties(input):
     data = defaultdict(list)
@@ -30,13 +34,13 @@ def display_types(types):
         table['name'].append(a_type.name.split('.')[-1])
     return pd.DataFrame(data=table)
 
-def display_artifacts(base_dir, store, artifacts):
+def display_artifacts(store, artifacts):
     table = defaultdict(list)
     for a in artifacts:
         table['artifact id'].append(a.id)
         artifact_type = store.get_artifact_types_by_id([a.type_id])[0]
         table['type'].append(artifact_type.name)
-        table['uri'].append(a.uri.replace(base_dir, './'))
+        table['uri'].append(a.uri)
         table['create_time_since_epoch'].append(a.create_time_since_epoch)
         table['last_update_time_since_epoch'].append(a.last_update_time_since_epoch)
     return pd.DataFrame(data=table)
@@ -68,11 +72,17 @@ def display_executions(store, artifacts):
         table['create_time_since_epoch'].append(a.create_time_since_epoch)
  
  
- def get_latest_executions(store, pipeline_name, component_id = None):
+def get_latest_executions(store, pipeline_name, component_id = None):
     if component_id is None:
         run_contexts = [
             c for c in store.get_contexts_by_type('run')
             if c.properties['pipeline_name'].string_value == pipeline_name
+        ]
+    elif isinstance(component_id, list):
+        run_contexts = [
+            c for c in store.get_contexts_by_type('component_run')
+            if c.properties['pipeline_name'].string_value == pipeline_name and
+               c.properties['component_id'].string_value in component_id
         ]
     else:  # Find specific component runs.
         run_contexts = [
