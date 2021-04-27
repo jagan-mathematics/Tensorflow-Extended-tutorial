@@ -9,3 +9,5 @@ class Config:
 	TENSORBOARD_LOGGING = os.path.join(PIPELINE_FOLDER, 'log')
 	TRANSFORM_MODULE_SCRIPT_NAME = 'transform_module_script.py'
 	TRANSFORM_MODULE_SCRIPT_PATH = os.path.join(UTILS_FOLDER, 'script', TRANSFORM_MODULE_SCRIPT_NAME)
+	ADD_ONS_DATASET_PATH = os.path.join('notebooks', 'add-ons', 'data')
+	ADD_ONS_DATASET_NAME = 'titanic'
