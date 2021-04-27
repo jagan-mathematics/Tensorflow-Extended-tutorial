@@ -13,6 +13,7 @@ In  my perspective, to achieve a good AI solution there must be balance between 
 
 The common practice amongst researchers is to hold the data fixed while trying to improve the code. But, when the dataset size is modest (<10,000 examples), Andrew Ng suggests ML teams will make faster progress, given the dataset is good.
 <img src="https://lh6.googleusercontent.com/3gH3JaNzlquzWvlJaCwyl7Ecb__-06NXAYHm8aRo5hpnhYJJ3smyGUfaOuvG8ukonzjZJRq-JWpB0Wu2SqR8_T6CmGT9k-2RDv2SwJGQ57CkjDjvBgO0av1VooCoPrqyElwQib_F"></img>
+<br>
 Andrew Ng mentioned how everyone jokes about ML is 80% data preparation, but no one seems to care. A quick look at the arxiv would give an idea of the direction ML research is going. There is unprecedented competition around beating the benchmarks. If Google has BERT then OpenAI has GPT-3. But, these fancy models take up only 20% of a business problem.
 
 <h5>Model Centric -> Data Centric</h5>
