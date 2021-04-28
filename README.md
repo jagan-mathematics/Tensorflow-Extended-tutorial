@@ -52,5 +52,5 @@ In this repo we had given an wide range of idea on how to use each tfx component
      - [Advance Data Preprocessing](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Preprocessing/Advance%20Data%20Preprocessing.ipynb)
    <br><br>
 Also try to explore [Apache Beam](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/tree/master/basics/apache%20beam) and what helper function we have used in [Utiles](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/tree/master/utils/) folder
-<br<br>
+<br><br>
 <strong>note</strong>: This notebook is in development stage. we planned to cover all components in TFX within a month. we also planned to develop end-to-end pipelining the production ready model with MLOps based deployment and in organisation way.
