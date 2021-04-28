@@ -40,13 +40,15 @@ There are a number of goals enterprises want to achieve through MLOps systems su
 <h5>Tensorflow Extended</h5>
 TFX is a Tensorflow Based Platform to host end to end Machine Learning Pipelines. TFX framework will used to prepare pipeline to clean data, train and serve production ready machone learning systems. TFX provides modular, flexible, collaborative, accessible and easy to use ML Ops Platform. Each TFX component allows proper storage, configuration, and orchestration of ML Models.<br>Orchestrators in TFX automates task executions and monitors TF components. One of the largest TFX Orchestrators is Apache Beam. Apache Beam is the unified batch and stream distributed API which acts as an abstraction layer to run on top of the distributed processing framework. This allows you to work on diverse backends such as Apache Spark, Local, Dataflow, etc.
 <br><br>
-***
-In this repo we had given an wide range of idea on how to use each tfx components standalone and also as MLOps pipeline. All notebooks in this repo are depended to each other. Each notebook will expect the execution of previous one. Each notebook explained the standalone excution of componet and orchestate it using interactivecontext from tfx. we have used metadata store heavily to establish link between notebooks. Follow the below mentioned sequence of execution:
+<hr/>
+In this repo we had given an wide range of idea on how to use each tfx components standalone and also as MLOps pipeline. All notebooks in this repo are depended to each other. Each notebook will expect the execution of previous one. Each notebook explained the standalone excution of componet and orchestate it using interactivecontext from tfx. we have used metadata store heavily to establish link between notebooks. Follow the below mentioned sequence:
+
+
    - [Data Ingestion and mldatastore](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Data%20Ingestion%20and%20mldatastore.ipynb)
    - [Data Validation](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Data%20Validation.ipynb)
-   	- [Data Validation Run In GCP](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Validation/Data%20Validation%20run%20on%20GCP.ipynb)
-   	- [Writing Custom data connector](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Validation/Writing%20custom%20data%20connector.ipynb)
+     - [Data Validation Run In GCP](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Validation/Data%20Validation%20run%20on%20GCP.ipynb)
+     - [Writing Custom data connector](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Validation/Writing%20custom%20data%20connector.ipynb)
    - [Data Preprocessing](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Data%20Preprocessing.ipynb)
-   	- [Advance Data Preprocessing](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Preprocessing/Advance%20Data%20Preprocessing.ipynb)
+     - [Advance Data Preprocessing](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Preprocessing/Advance%20Data%20Preprocessing.ipynb)
    <br>
-   **note**: This notebook is in development stage. we planned to cover all components in TFX within a month. we also planned to develop end-to-end pipelining the production ready model with MLOps based deployment and in organisation way.
+   <strong>note</strong>: This notebook is in development stage. we planned to cover all components in TFX within a month. we also planned to develop end-to-end pipelining the production ready model with MLOps based deployment and in organisation way.
