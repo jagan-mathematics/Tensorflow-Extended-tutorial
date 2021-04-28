@@ -1,5 +1,5 @@
 # Tensorflow-Extended-tutorial
-<img height="350" width='100%' src="https://www.tensorflow.org/site-assets/images/project-logos/tensorflow-extended-tfx-logo-social.png" alt='tfx_image'></img>
+![tfx-logo](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/images/tensorflow-extened-log.png)
 
 <h4>Model Centric</h4>
 In the model centric approach Data Scientist will stive to make the data fit their model through feature enginearing. First they will start with the base model. If their existing model fails they will develop new one that adequately address the problem. 
@@ -16,8 +16,8 @@ The common practice amongst researchers is to hold the data fixed while trying t
 Bellow table is an result of the expericent which proves why data centric aproach is better than model centric. If your model is already at its best the task to have it improved to achieve 90% accuracy sound almost impossible.
 
 for the model centric, the improvements is based on Network Architecture search and using the state-of-the-art architectures, whereas, for the data centric, the approach taken was to identify inconsistencies and clean noisy labels. you can see that what data centric aproach does<br><br>
-<img align = 'center' src="https://lh6.googleusercontent.com/3gH3JaNzlquzWvlJaCwyl7Ecb__-06NXAYHm8aRo5hpnhYJJ3smyGUfaOuvG8ukonzjZJRq-JWpB0Wu2SqR8_T6CmGT9k-2RDv2SwJGQ57CkjDjvBgO0av1VooCoPrqyElwQib_F"></img>
-<br>
+<img src="https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/images/adrew-ng-experiment-result.png"></img>
+<br><br>
 Andrew Ng mentioned how everyone jokes about ML is 80% data preparation, but no one seems to care. A quick look at the arxiv would give an idea of the direction ML research is going. There is unprecedented competition around beating the benchmarks. If Google has BERT then OpenAI has GPT-3. But, these fancy models take up only 20% of a business problem.
 
 <h5>Model Centric -> Data Centric</h5>
@@ -37,3 +37,8 @@ There are a number of goals enterprises want to achieve through MLOps systems su
 - Scalability
 - Monitoring and management
 
+<h5>Tensorflow Extended</h5>
+TFX is a Tensorflow Based Platform to host end to end Machine Learning Pipelines. TFX framework will used to prepare pipeline to clean data, train and serve production ready machone learning systems. TFX provides modular, flexible, collaborative, accessible and easy to use ML Ops Platform. Each TFX component allows proper storage, configuration, and orchestration of ML Models.<br>Orchestrators in TFX automates task executions and monitors TF components. One of the largest TFX Orchestrators is Apache Beam. Apache Beam is the unified batch and stream distributed API which acts as an abstraction layer to run on top of the distributed processing framework. This allows you to work on diverse backends such as Apache Spark, Local, Dataflow, etc.
+
+
+In this repo we had given an wide range of idea on how to use each tfx components standalone and also as MLOps pipeline. All notebooks in this repo are depended to each other. Each notebook will expect the execution of previous one. Each notebook explained the standalone excution of componet and orchestate it using interactivecontext from tfx. we have used metadata store heavily to establish link between notebooks. Follow the below mentioned sequence of execution:
