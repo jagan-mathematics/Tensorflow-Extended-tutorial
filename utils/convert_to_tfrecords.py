@@ -10,6 +10,7 @@ logging.basicConfig(level=logging.INFO)
 
 logging.info("TfRecord convertion script started.....")
 
+
 def _bytes_feature(value):
     return tf.train.Feature(
         bytes_list=tf.train.BytesList(value=[value.encode()])
@@ -29,30 +30,33 @@ def clean_rows(row):
         row["zip_code"] = "99999"
     return row
 
+
 def convert_zipcode_to_int(zipcode):
     if isinstance(zipcode, str) and "XX" in zipcode:
         zipcode = zipcode.replace("XX", "00")
     int_zipcode = int(zipcode)
     return int_zipcode
-        
+
+
 def get_folder():
     path = os.getcwd()
     while True:
         path, ref = os.path.split(path)
         if ref == Config.PROJECT_NAME:
-           path =  os.path.join(path, ref)
-           break
+            path = os.path.join(path, ref)
+            break
         if path == '':
-           raise Exception('Check Wheather project name set correctly')
+            raise Exception('Check Wheather project name set correctly')
     return path
-    
+
+
 path = get_folder()
 original_data_file = os.path.join(
-	path, "data", 'dataset1', "consumer_complaints_with_narrative.csv")
-	
+       path, "data", 'dataset1', "consumer_complaints_with_narrative.csv")
+
 tfrecords_filename = os.path.join(
-	path, "data", 'dataset2', "consumer-complaints.tfrecords")
-	
+       path, "data", 'dataset2', "consumer-complaints.tfrecords")
+
 tf_record_writer = tf.io.TFRecordWriter(tfrecords_filename)
 
 logging.info("Conveting..")

@@ -1,9 +1,9 @@
 import pandas as pd
 from tfx.types import artifact_utils
-from tfx.types import standard_artifacts
-from tfx.types import channel_utils
 from collections import defaultdict
 from ml_metadata.proto import metadata_store_pb2
+from tfx.orchestration.experimental.interactive import visualizations
+
 
 def display_properties(input):
     data = defaultdict(list)
@@ -17,7 +17,6 @@ def display_properties(input):
             data['is_customproperty'].append(0)
             data['value'].append(value.string_value)
 
-            
         for key, value in custom_properties.items():
             data['artifact id'].append(artifact.id)
             data['type_id'].append(artifact.type_id)
@@ -34,6 +33,7 @@ def display_types(types):
         table['name'].append(a_type.name.split('.')[-1])
     return pd.DataFrame(data=table)
 
+
 def display_artifacts(store, artifacts):
     table = defaultdict(list)
     for a in artifacts:
@@ -44,7 +44,8 @@ def display_artifacts(store, artifacts):
         table['create_time_since_epoch'].append(a.create_time_since_epoch)
         table['last_update_time_since_epoch'].append(a.last_update_time_since_epoch)
     return pd.DataFrame(data=table)
-    
+
+
 def display_context(store, artifacts):
     table = defaultdict(list)
     for a in artifacts:
@@ -55,6 +56,7 @@ def display_context(store, artifacts):
         table['create_time_since_epoch'].append(a.create_time_since_epoch)
         table['last_update_time_since_epoch'].append(a.last_update_time_since_epoch)
     return pd.DataFrame(data=table)
+
 
 def display_executions(store, artifacts):
     table = defaultdict(list)
@@ -70,9 +72,9 @@ def display_executions(store, artifacts):
         else:
             table['last_known_state'].append(e_state)
         table['create_time_since_epoch'].append(a.create_time_since_epoch)
- 
- 
-def get_latest_executions(store, pipeline_name, component_id = None):
+
+
+def get_latest_executions(store, pipeline_name, component_id=None):
     if component_id is None:
         run_contexts = [
             c for c in store.get_contexts_by_type('run')
@@ -80,24 +82,24 @@ def get_latest_executions(store, pipeline_name, component_id = None):
         ]
     elif isinstance(component_id, list):
         run_contexts = [
-            c for c in store.get_contexts_by_type('component_run')
-            if c.properties['pipeline_name'].string_value == pipeline_name and
+               c for c in store.get_contexts_by_type('component_run')
+               if c.properties['pipeline_name'].string_value == pipeline_name and
                c.properties['component_id'].string_value in component_id
-        ]
+               ]
     else:  # Find specific component runs.
         run_contexts = [
             c for c in store.get_contexts_by_type('component_run')
             if c.properties['pipeline_name'].string_value == pipeline_name and
-               c.properties['component_id'].string_value == component_id
+            c.properties['component_id'].string_value == component_id
         ]
     if not run_contexts:
         return []
     # Pick the latest run context.
-    latest_context = max(run_contexts,
-                       key=lambda c: c.last_update_time_since_epoch)
+    latest_context = max(run_contexts, key=lambda c: c.last_update_time_since_epoch)
     return store.get_executions_by_context(latest_context.id)
 
-def get_latest_artifacts(store, pipeline_name, component_id = None):
+
+def get_latest_artifacts(store, pipeline_name, component_id=None):
     executions = get_latest_executions(store, pipeline_name, component_id)
 
     # Fetch all artifacts produced from the given executions.
@@ -113,12 +115,13 @@ def get_latest_artifacts(store, pipeline_name, component_id = None):
 def find_latest_artifacts_by_type(store, artifacts, artifact_type):
     try:
         artifact_type = store.get_artifact_type(artifact_type)
-    except errors.NotFoundError:
+    except Exception as e:
+        print(f"[WARNING]: {str(e)}")
         return []
-    filtered_artifacts = [aritfact for aritfact in artifacts
-                        if aritfact.type_id == artifact_type.id]
-    return [artifact_utils.deserialize_artifact(artifact_type, artifact)
-      for artifact in filtered_artifacts]
+
+    filtered_artifacts = [aritfact for aritfact in artifacts if aritfact.type_id == artifact_type.id]
+    return [artifact_utils.deserialize_artifact(artifact_type, artifact) for artifact in filtered_artifacts]
+
 
 def visualize_artifacts(artifacts):
     for artifact in artifacts:
@@ -126,6 +129,3 @@ def visualize_artifacts(artifacts):
             artifact.type_name)
     if visualization:
         visualization.display(artifact)
-        table['last_update_time_since_epoch'].append(a.last_update_time_since_epoch)
-    return pd.DataFrame(data=table)
-
