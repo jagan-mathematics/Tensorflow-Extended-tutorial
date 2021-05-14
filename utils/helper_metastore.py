@@ -72,6 +72,7 @@ def display_executions(store, artifacts):
         else:
             table['last_known_state'].append(e_state)
         table['create_time_since_epoch'].append(a.create_time_since_epoch)
+    return pd.DataFrame(data=table)
 
 
 def get_latest_executions(store, pipeline_name, component_id=None):

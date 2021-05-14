@@ -45,6 +45,31 @@ TFX is a Tensorflow Based Platform to host end to end Machine Learning Pipelines
 <hr/>
 In this repo we had given an wide range of idea on how to use each tfx components standalone and also as MLOps pipeline. All notebooks in this repo are depended to each other. Each notebook will expect the execution of previous one. Each notebook explained the standalone excution of componet and orchestate it using interactivecontext from tfx. we have used metadata store heavily to establish link between notebooks. Follow the below mentioned sequence:
 
+There are some step to be done for smooth learning:
+
+step 1:
+    clone the repo and create environment in the path <strong>[root_dir]/Tensorflow-Extended-tutorial</strong>
+            ```pythom -m venv env```
+    Activate the evirnonment using command bellow
+    if you are using windows:
+            ```env\Scripts\activate```
+    if you are using linux based system:
+            ```source env/bin/activate```
+            
+step 2:
+    install all required packages:
+           ```pip install -r requirements.txt```
+           
+step 3:
+    For model training pipeline you need to download some pretrained model weights and extract it in the path 
+    <strong>[root_dir]/Tensorflow-Extended-tutorial/models</strong>
+                                        (or)
+    you can dowload those thing on the fly by changing the value of the parameter in config.py file
+    PATH: <strong>[root_dir]/Tensorflow-Extended-tutorial/utils/configurations</strong>
+
+strp 4:
+    Things to be changed in config.py (optional)
+
 
    - [Data Ingestion and mldatastore](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Data%20Ingestion%20and%20mldatastore.ipynb)
    - [Data Validation](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Data%20Validation.ipynb)
@@ -52,6 +77,7 @@ In this repo we had given an wide range of idea on how to use each tfx component
      - [Writing Custom data connector](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Validation/Writing%20custom%20data%20connector.ipynb)
    - [Data Preprocessing](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Data%20Preprocessing.ipynb)
      - [Advance Data Preprocessing](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Preprocessing/Advance%20Data%20Preprocessing.ipynb)
+   - [Model Training](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Model%20Training.ipynb)
    <br><br>
 Also try to explore [Apache Beam](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/tree/master/basics/apache%20beam) and what helper function we have used in [Utiles](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/tree/master/utils/) folder
 <br><br>
