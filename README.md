@@ -48,29 +48,29 @@ In this repo we had given an wide range of idea on how to use each tfx component
 There are some step to be done for smooth learning:
 
 step 1:
-    clone the repo and create environment in the path <strong>[root_dir]/Tensorflow-Extended-tutorial</strong>
-            ```pythom -m venv env```
-    Activate the evirnonment using command bellow
-    if you are using windows:
-            ```env\Scripts\activate```
-    if you are using linux based system:
-            ```source env/bin/activate```
+    clone the repo and create environment in the path <strong>[root_dir]/Tensorflow-Extended-tutorial</strong><br>
+            ```pythom -m venv env```<br>
+    Activate the evirnonment using command bellow<br>
+    if you are using windows:<br>
+            ```env\Scripts\activate```<br>
+    if you are using linux based system:<br>
+            ```source env/bin/activate```<br>
             
-step 2:
-    install all required packages:
-           ```pip install -r requirements.txt```
+step 2:<br>
+    install all required packages:<br>
+           ```pip install -r requirements.txt```<br>
            
-step 3:
-    For model training pipeline you need to download some pretrained model weights and extract it in the path 
-    <strong>[root_dir]/Tensorflow-Extended-tutorial/models</strong>
-                                        (or)
-    you can dowload those thing on the fly by changing the value of the parameter in config.py file
-    PATH: <strong>[root_dir]/Tensorflow-Extended-tutorial/utils/configurations</strong>
-
-strp 4:
-    Things to be changed in config.py (optional)
+step 3:<br>
+    For model training pipeline you need to download some pretrained model weights from [here](https://tfhub.dev/google/universal-sentence-encoder/4) and extract it in the path<br>
+    <strong>[root_dir]/Tensorflow-Extended-tutorial/models</strong><br>
+                                        (or)<br>
+    you can dowload those thing on the fly by changing the value of the parameter in config.py file<br>
+    FILE PATH: <strong>[root_dir]/Tensorflow-Extended-tutorial/utils/configurations</strong><br>
+    change line 15 as => UNIVERSAL_EMBEDDING_MODEL = "https://tfhub.dev/google/universal-sentence-encoder/4"
 
 
+Everything done!! 
+lets go!!
    - [Data Ingestion and mldatastore](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Data%20Ingestion%20and%20mldatastore.ipynb)
    - [Data Validation](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Data%20Validation.ipynb)
      - [Data Validation Run In GCP](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Validation/Data%20Validation%20run%20on%20GCP.ipynb)
