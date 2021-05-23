@@ -12,4 +12,4 @@ class Config:
     TRANSFORM_MODULE_SCRIPT_PATH = os.path.join(UTILS_FOLDER, 'script', TRANSFORM_MODULE_SCRIPT_NAME)
     ADD_ONS_DATASET_PATH = os.path.join('notebooks', 'add-ons', 'data')
     ADD_ONS_DATASET_NAME = 'titanic'
-    UNIVERSAL_EMBEDDING_MODEL = '../models/universal-sentence-encoder_4' # "https://tfhub.dev/google/universal-sentence-encoder/4"
+    UNIVERSAL_EMBEDDING_MODEL = '../models/universal-sentence-encoder_4'

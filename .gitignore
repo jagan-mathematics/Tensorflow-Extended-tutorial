@@ -132,3 +132,4 @@ dmypy.json
 data/
 temp_/
 utils/__pycache__/
+models/

@@ -78,6 +78,7 @@ strp 4:
    - [Data Preprocessing](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Data%20Preprocessing.ipynb)
      - [Advance Data Preprocessing](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Data%20Preprocessing/Advance%20Data%20Preprocessing.ipynb)
    - [Model Training](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/Model%20Training.ipynb)
+     - [Writing Custom data connector](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/blob/master/notebooks/add-ons/Model%20Training/Tuner%20+%20Traning%20(Hyperparameter%20tunning).ipynb)
    <br><br>
 Also try to explore [Apache Beam](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/tree/master/basics/apache%20beam) and what helper function we have used in [Utiles](https://github.com/jagan-mathematics/Tensorflow-Extended-tutorial/tree/master/utils/) folder
 <br><br>
