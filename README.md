@@ -43,9 +43,9 @@ There are a number of goals enterprises want to achieve through MLOps systems su
 &nbsp;&nbsp;&nbsp;TFX is a Tensorflow Based Platform to host end to end Machine Learning Pipelines. TFX framework will used to prepare pipeline to clean data, train and serve production ready machone learning systems. TFX provides modular, flexible, collaborative, accessible and easy to use ML Ops Platform. Each TFX component allows proper storage, configuration, and orchestration of ML Models.<br>Orchestrators in TFX automates task executions and monitors TF components. One of the largest TFX Orchestrators is Apache Beam. Apache Beam is the unified batch and stream distributed API which acts as an abstraction layer to run on top of the distributed processing framework. This allows you to work on diverse backends such as Apache Spark, Local, Dataflow, etc.
 <br><br>
 <hr/>
-In this repo we had given an wide range of idea on how to use each tfx components standalone and also as MLOps pipeline. All notebooks in this repo are depended to each other. Each notebook will expect the execution of previous one. Each notebook explained the standalone excution of componet and orchestate it using interactivecontext from tfx. we have used metadata store heavily to establish link between notebooks. Follow the below mentioned sequence:
+In this repo we had given an wide range of idea on how to use each tfx components standalone and also as MLOps pipeline. All notebooks in this repo are depended to each other. Each notebook will expect the execution of previous one. Each notebook explained the standalone execution of component and orchestrate it using interactive context from tfx. we have used metadata store heavily to establish link between notebooks. Follow the below mentioned sequence: 
 
-There are some step to be done for smooth learning:
+There is a step to be taken for smooth learning:
 
 step 1:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clone the repo and create environment in the path <strong>[root_dir]/Tensorflow-Extended-tutorial</strong><br>
