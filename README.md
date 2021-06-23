@@ -45,6 +45,7 @@ There are a number of goals enterprises want to achieve through MLOps systems su
 <hr/>
 In this repo we had given an wide range of idea on how to use each tfx components standalone and also as MLOps pipeline. All notebooks in this repo are depended to each other. Each notebook will expect the execution of previous one. Each notebook explained the standalone execution of component and orchestrate it using interactive context from tfx. we have used metadata store heavily to establish link between notebooks. Follow the below mentioned sequence: 
 
+
 There is a step to be taken for smooth learning:
 
 step 1:<br>
